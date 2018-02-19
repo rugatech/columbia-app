@@ -1,0 +1,7 @@
+<div *ngFor="let alert of alertsService.alerts">
+  <div class="alert {{alert.alert_type}} alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{alert.prefix_message}}:</strong> {{alert.message}}
+  </div>
+</div>
+

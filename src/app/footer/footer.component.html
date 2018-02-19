@@ -1,0 +1,11 @@
+<footer class="footer footer-masquerade" *ngIf="active_masquerade">
+  <div class="container">
+    <div class="text-center margin-top5">You are currently Masquerading as {{masquerade_name}}.</div>
+  </div>
+</footer>
+<footer class="footer" *ngIf="!active_masquerade">
+  <div class="container">
+    <div class="text-center margin-top5">&copy;2017 Rugatech Databases, LLC.</div>
+  </div>
+</footer>
+

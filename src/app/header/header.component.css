@@ -1,0 +1,33 @@
+.program-title{
+    color:#FFF;
+    font-size:26px;
+    margin-top:30px;
+}
+.ru-header-navbar-true,.ru-header-navbar-false{
+    /* background-color:#19254f; */
+    background-color:#0849A3;
+    line-height:21.6px;
+    width:100%
+}
+.ru-header-navbar-false{
+    height:110px;
+}
+.ru-header-navbar-true{
+    height:160px;
+}
+
+@media (max-width:767px) and (min-width:5px){
+    .ru-header-navbar-true, .ru-header-navbar-false{height:160px}
+    .program-title{padding-top:15px}
+}
+@media (max-width:767px) and (min-width:498px){
+    .program-title{font-size:24px;margin-top:10px}
+}
+
+@media (max-width:497px) and (min-width:5px) {
+    .program-title{font-size:20px;margin-top:10px}
+}
+
+@media (max-width:992px) and (min-width:768px) {
+    .ru-header-navbar-true{height:110px}
+}
