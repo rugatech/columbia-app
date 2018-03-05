@@ -23,4 +23,8 @@ export class HomeComponent implements OnInit {
             []
 	);
     }
+
+    newReport(){
+        this.router.navigate(["/report"]);
+    }
 }

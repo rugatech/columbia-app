@@ -283,5 +283,127 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Supervisor’s Statement
+          </div>
+        </div>
+        <div class="panel-body">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Was the employee paid for the full day?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="full_day">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="full_day">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Is employee losing time?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="losing_time">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="losing_time">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Employee’s first day away from work:</label>
+                <div class="input-group">
+                  <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate" [(ngModel)]="first_day_date" [options]="dateeOptions" #dp="ngx-mydatepicker">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dp.clearDate()">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Has employee returned to work?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="returned_to_work">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="returned_to_work">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Expected date of return to work:</label>
+                <div class="input-group">
+                  <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate" [(ngModel)]="return_to_work_date" [options]="dateeOptions" #dp="ngx-mydatepicker">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dp.clearDate()">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Is employee a union member?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="is_union_member">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="is_union_member">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Will the employee be paid for lost time?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="paid_lost_time">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="paid_lost_time">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Did the injured employee receive medical attention?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="receive_medical" value="Yes" ngModel required #receive_medical="ngModel">Yes</label>
+                  <label class="radio-inline"><input type="radio" name="receive_medical" value="No" ngModel required #receive_medical="ngModel">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" [ngStyle]="{'display':receive_medical.value=='Yes' ? 'Block' : 'None' }">
+            <div class="col-md-6">&nbsp;</div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required" for="injury_type">Name and address of doctor or hospital where first treated:</label>
+                <textarea rows="4" id="doctor" name="doctor" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 </form>

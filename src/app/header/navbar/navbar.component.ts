@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavbarService} from './navbar.service';
 import * as _ from 'lodash';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-navbar',
@@ -13,10 +14,10 @@ export class NavbarComponent implements OnInit {
         {'text': 'MyPARS Home', 'route': '/home'}
     ];
 
-    constructor(public navbarSerivce: NavbarService) {}
+    constructor(public navbarSerivce: NavbarService, private router: Router) {}
 
     ngOnInit() {
-        this.navbarSerivce.navbarLinksSubject.subscribe(
+        /*this.navbarSerivce.navbarLinksSubject.subscribe(
             (links: any[]) => {
                 this.links = [];
                 this.links.push({'text': 'MyPARS Home', 'route': '/home'})
@@ -24,7 +25,11 @@ export class NavbarComponent implements OnInit {
                     this.links.push(links[index]);
                 });
             }
-        );
+        ); */
+    }
+
+    goHome(){
+        this.router.navigate(['/']);
     }
 
 }

@@ -16,6 +16,8 @@ export class BaseReportComponent implements OnInit {
     };
     email: string;
     datee: string;
+    first_day_date: string;
+    return_to_work_date: string;
     another_person_date: string;
     times: object[] = [
         {"ts":"06:00","time":"6:00 AM"},
@@ -125,6 +127,5 @@ export class BaseReportComponent implements OnInit {
 
     onSubmit(form: NgForm) {
 	this.alertsService.clearAlerts();
-	console.log(this.updateForm.form.value);
     }
 }
