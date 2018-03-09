@@ -8,12 +8,14 @@ import {CoreModule} from './core/core.module';
 import {HomeComponent} from './home/home.component';
 import { BaseReportComponent } from './reports/base-report/base-report.component';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+import { AllreportsComponent } from './reports/allreports/allreports.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        BaseReportComponent
+        BaseReportComponent,
+        AllreportsComponent
     ],
     imports: [
         BrowserModule,
