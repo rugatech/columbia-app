@@ -4,21 +4,20 @@ import {AlertsService} from "../../alerts/alerts.service";
 import {INgxMyDpOptions} from 'ngx-mydatepicker';
 
 @Component({
-    selector: 'app-base-report',
-    templateUrl: './base-report.component.html',
-    styleUrls: ['./base-report.component.css']
+  selector: 'app-update-report',
+  templateUrl: './update-report.component.html',
+  styleUrls: ['./update-report.component.css']
 })
-export class BaseReportComponent implements OnInit {
+export class UpdateReportComponent implements OnInit {
     @Input() mode: string;
     @ViewChild('frm') updateForm: NgForm;
     dateeOptions: INgxMyDpOptions = {
 	dateFormat: 'mmm dd, yyyy',
     };
-    email: string;
-    datee: string;
     first_day_date: string;
     return_to_work_date: string;
     another_person_date: string;
+    started_work: number = 10;
     times: object[] = [
 	{"ts":"06:00","time":"6:00 AM"},
 	{"ts":"06:15","time":"6:15 AM"},
@@ -122,10 +121,48 @@ export class BaseReportComponent implements OnInit {
     }
 
     ngOnInit() {
-	this.email="engage@cumc.columbia.edu";
+	setTimeout(()=>{
+	    this.updateForm.form.patchValue({
+		"fname":"John",
+		"lname":"Conner",
+                "dept":"Facilties",
+                "email":"john.carter@cmu.edu",
+                "mydate":{
+		  "date":{
+		    "year":2018,
+                    "month":3,
+                    "day":21
+                  }
+                },
+                "injury_time": "10:00",
+		"started_work": "07:00",
+                "location":"Building XYZ Room 101",
+                "occurred":"Mopping the floor",
+                "circumstances":"It was a cold, dark and stormy night",
+                "primary":"Lost power and slipped on the wet floor",
+                "substance": "Water on the floor",
+                "is_sharp":"N",
+                "injury_type":"Face planted on my forehead",
+                "another_person":"Y",
+                "another_person_name":"Sarah Conner",
+		"mydate2":{
+		    "date":{
+			"year":2018,
+			"month":3,
+			"day":21
+		    }
+		},
+		"another_person_time":"10:15",
+                "is_witness":"No"
+
+	    });
+        }, 100);
+
     }
 
     onSubmit(form: NgForm) {
 	this.alertsService.clearAlerts();
+	console.log(this.updateForm.form.value);
     }
+
 }

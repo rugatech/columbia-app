@@ -1,0 +1,69 @@
+<div class="row text-center title">Update User</div>
+<form (ngSubmit)="onSubmit(frm)" #frm="ngForm" class="form" role="form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            User Information
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fname" class="control-label required">First Name</label>
+                <input type="text" id="fname" name="fname" class="form-control" ngModel required #fname="ngModel">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lname" class="control-label required">Last Name</label>
+                <input type="text" id="lname" name="lname" class="form-control" ngModel required #lname="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="orgName" class="control-label required">Department</label>
+                <input type="text" id="orgName" name="orgName" class="form-control" ngModel required #orgName="ngModel">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email" class="control-label required">E-Mail</label>
+                <input type="email" id="email" name="email" class="form-control" ngModel required email #email="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="orgName" class="control-label required">CUMC ID</label>
+                <input type="text" id="cumcid" name="cumcid" class="form-control" ngModel required #cumcid="ngModel">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email" class="control-label required">Role</label>
+                <select id="role" name="role" class="form-control" ngModel required #role="ngModel">
+                  <option *ngFor="let mg of roles" value="{{mg.id}}">
+                    {{mg.role_name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text-center">
+      <button class="btn btn-primary" type="submit" ><i class="fa fa-floppy-o fa-lg"></i>&nbsp;Submit</button>
+    </div>
+  </div>
+</form>

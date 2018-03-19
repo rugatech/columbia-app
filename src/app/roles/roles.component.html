@@ -1,0 +1,11 @@
+<div class="row text-center title">Roles</div>
+<div class="row text-center"><button class="btn btn-purple" type="button"><i class="fa fa-plus fa-1x"></i> Create Role</button></div>
+<div class="row">
+  <div class="col-md-12 text-left">
+    <ul class="ul1">
+      <li *ngFor="let role of roles">
+        <a [routerLink]="['/roles/update',role.id]">{{role.role_name}}</a><span *ngIf="role.id=='1'" style="color:#F00">&nbsp;(**This is the only functioning link)</span>
+      </li>
+    </ul>
+  </div>
+</div>

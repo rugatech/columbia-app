@@ -25,11 +25,15 @@ export class HomeComponent implements OnInit {
     }
 
     newReport(){
-        this.router.navigate(["/report"]);
+        this.router.navigate(["/new_report"]);
     }
 
     allReports(){
-	console.log("here");
         this.router.navigate(["/allreports"]);
+    }
+
+    updateReport(){
+	console.log("ggggg");
+        this.router.navigate(["/update_report"]);
     }
 }

@@ -1,0 +1,186 @@
+<div class="row text-center title">Update Role</div>
+<form (ngSubmit)="onSubmit(frm)" #frm="ngForm" class="form" role="form">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Role Information
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="role_name" class="control-label required">Role Name</label>
+                <input type="text" class="form-control" name="role_name" id="role_name" ngModel required #role_name="ngModel">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="comments" class="control-label required">Description</label>
+                <textarea class="form-control" name="comments" id="comments" rows="5" ngModel required #comments="ngModel"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Permissions</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="col-sm-4 form-control-static custom-text-right">Incidet Reports:</div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="create_reports" name="create_reports" ngModel>Create</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="read_reports" name="read_reports" ngModel>Read</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="update_reports" name="update_reports" ngModel>Update</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="delete_reports" name="delete_reports" ngModel>Delete</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="col-sm-4 form-control-static custom-text-right">Users:</div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="create_users" name="create_users" ngModel>Create</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="read_users" name="read_users" ngModel>Read</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="update_users" name="update_users" ngModel>Update</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="delete_users" name="delete_users" ngModel>Delete</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="col-sm-4 form-control-static custom-text-right">Roles:</div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="create_roles" name="create_roles" ngModel>Create</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="read_roles" name="read_roles" ngModel>Read</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="update_roles" name="update_roles" ngModel>Update</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="checkbox">
+                      <label><input type="checkbox" id="delete_roles" name="delete_roles" ngModel>Delete</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Member of Managing Department</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_risk_management" name="dept_risk_management" ngModel>Risk Management</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_ehs" name="dept_ehs" ngModel>EH&amp;S</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_icm" name="dept_icm" ngModel>ICM</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_facilities_compliance" name="dept_facilities_compliance" ngModel>Facilities Compliance</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_facilities_hr" name="dept_faciltiies_hr" ngModel>Facilties HR</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_central_hr" name="dept_central_hr" ngModel>Central HR</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_lamont_safety" name="dept_lamont_safety" ngModel>Lamont Safety Department</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="checkbox">
+                <label><input type="checkbox" id="dept_public_safety" name="dept_public_safety" ngModel>Public Safety</label>
+              </div>
+            </div>
+            <div class="col-sm-4">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <button class="btn btn-primary" type="submit" ><i class="fa fa-floppy-o fa-lg"></i>&nbsp;Submit</button>
+    </div>
+  </div>
+</form>

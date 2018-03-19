@@ -32,4 +32,11 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['/']);
     }
 
+    goUsers(){
+	this.router.navigate(['/users']);
+    }
+
+    goRoles(){
+	this.router.navigate(['/roles']);
+    }
 }

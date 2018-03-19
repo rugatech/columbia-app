@@ -4,11 +4,12 @@ import {AlertsService} from "../../alerts/alerts.service";
 import {INgxMyDpOptions} from 'ngx-mydatepicker';
 
 @Component({
-    selector: 'app-base-report',
-    templateUrl: './base-report.component.html',
-    styleUrls: ['./base-report.component.css']
+  selector: 'app-public-report',
+  templateUrl: './public-report.component.html',
+  styleUrls: ['./public-report.component.css']
 })
-export class BaseReportComponent implements OnInit {
+export class PublicReportComponent implements OnInit {
+
     @Input() mode: string;
     @ViewChild('frm') updateForm: NgForm;
     dateeOptions: INgxMyDpOptions = {

@@ -1,0 +1,196 @@
+<div class="row text-center title">Create New Report</div>
+<form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Person Information
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">First Name</label>
+                <input type="text" id="fname" name="fname" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Last Name</label>
+                <input type="text" id="lname" name="lname" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="text-center"><button class="btn btn-primary" type="submit"><i class="fa fa-floppy-o fa-lg"></i>&nbsp;&nbsp;Submit</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Accident Information
+          </div>
+        </div>
+        <div class="panel-body">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Date of Injury/Illness</label>
+                <div class="input-group">
+                  <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate" [(ngModel)]="datee" [options]="dateeOptions" #dp="ngx-mydatepicker">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dp.clearDate()">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Time of Injury/Illness</label>
+                <select name="injury_time" class="form-control">
+                  <option value=""></option>
+                  <option *ngFor="let t of times" value="t.ts">{{t.time}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Location where injury/illness occurred:</label>
+                <input type="text" id="location" name="location" class="form-control" ngModel required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required" for="injury_type">Describe the injury/illness—indicate type of injury, specify left or right, and so on, for example, "upper right leg"</label>
+                <textarea rows="4" id="injury_type" name="injury_type" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">What were you doing when injury/illness occurred?</label>
+                <textarea rows="4" id="occurred" name="occurred" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">What were the circumstances leading up to the incident?</label>
+                <textarea rows="4" id="circumstances" name="circumstances" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">How did the primary injury/illness occur?</label>
+                <textarea rows="4" id="primary" name="primary" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Describe the object and/or substance which directly injured you</label>
+                <textarea rows="4" id="substance" name="substance" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label required">Did you report the accident to another person?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="another_person" value="Y" ngModel #another_person="ngModel" required>Yes</label>
+                  <label class="radio-inline"><input type="radio" name="another_person" value="N" ngModel #another_person="ngModel" required>No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" [ngStyle]="{'display':another_person.value=='Y' ? 'Block' : 'None' }">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Name of other person</label>
+                <input type="text" id="another_person_name" name="another_person_name" class="form-control" ngModel required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Date reported to other person</label>
+                <div class="input-group">
+                  <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="mydate2" [(ngModel)]="another_person_date" [options]="dateeOptions" #dp2="ngx-mydatepicker">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dp2.clearDate()">
+                      <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="dp2.toggleCalendar()">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" [ngStyle]="{'display':another_person.value=='Y' ? 'Block' : 'None' }">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Time reported to other person</label>
+                <select name="another_person_time" class="form-control">
+                  <option value=""></option>
+                  <option *ngFor="let t of times" value="t.ts">{{t.time}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">&nbsp;</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label required">Was there a witness to the accident?</label>
+                <div>
+                  <label class="radio-inline"><input type="radio" name="is_witness" value="Yes" ngModel #is_witness="ngModel" required>Yes</label>
+                  <label class="radio-inline"><input type="radio" name="is_witness" value="No" ngModel #is_witness="ngModel" required>No</label>
+                  <label class="radio-inline"><input type="radio" name="is_witness" value="NA" ngModel #is_witness="ngModel" required>N/A</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" [ngStyle]="{'display':is_witness.value=='Yes' ? 'Block' : 'None' }">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Witness Name?</label>
+                <input type="text" id="witness_name" name="witness_name" class="form-control" ngModel required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label required">Witness Address</label>
+                <textarea rows="3" id="witness_address" name="witness_address" class="form-control" ngModel required></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

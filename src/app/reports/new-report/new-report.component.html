@@ -1,0 +1,105 @@
+<div class="row text-center title">New Report</div>
+<form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
+  <div class="row">
+     <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Report Type
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="radio">
+            <label><input type="radio" name="new_report_type" value="1" #new_report_type="ngModel" ngModel>I am submitting a report for myself</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="new_report_type" value="2" #new_report_type="ngModel" ngModel>I am a supervisor and I am submitting a report for my employee</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="new_report_type" value="3" #new_report_type="ngModel" ngModel>I am submitting a report for a member of the general public<div style="font-style: italic;color:red">(This only applies to people who have the rights to do this)</div></label>
+          </div>
+          <div class="text-center" [ngStyle]="{'display':new_report_type.value=='3' ? 'Block' : 'None' }">
+            <button class="btn btn-primary" type="button" (click)="beginReport()">Begin Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">&nbsp;</div>
+  </div>
+  <div class="row margin-top15" [ngStyle]="{'display':new_report_type.value=='2' ? 'Block' : 'None' }">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Search for Employee
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input type="text" id="fname" name="fname" class="form-control" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Last Name</label>
+            <input type="text" id="lname" name="lname" class="form-control" ngModel>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" type="button">Submit</button>
+          </div>
+          <div>
+            <div style="font-style: italic;color:red">
+              <ul>
+                <li>This will search a Columbia people to pull some information about this person.</li>
+                <li>Search results will appear here.</li>
+                <li>Clicking on the person's name will create the report with some of the fields already completed.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" type="button" (click)="beginReport()">Begin Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">&nbsp;</div>
+  </div>
+
+  <div class="row margin-top15" [ngStyle]="{'display':new_report_type.value=='1' ? 'Block' : 'None' }">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            Search for a Supervisor
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input type="text" id="fname2" name="fname2" class="form-control" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Last Name</label>
+            <input type="text" id="lname2" name="lname2" class="form-control" ngModel>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" type="button">Submit</button>
+          </div>
+          <div>
+            <div style="font-style: italic;color:red">
+              <ul>
+                <li>This will search a Columbia people to pull some information about this person.</li>
+                <li>Search results will appear here.</li>
+                <li>Clicking on the person's name will create the report with some of the fields already completed.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" type="button" (click)="beginReport()">Begin Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">&nbsp;</div>
+  </div>
+
+</form>
