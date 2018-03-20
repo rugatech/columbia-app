@@ -2,6 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {AlertsService} from "../../alerts/alerts.service";
 import {INgxMyDpOptions} from 'ngx-mydatepicker';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
     selector: 'app-base-report',
@@ -19,6 +20,9 @@ export class BaseReportComponent implements OnInit {
     first_day_date: string;
     return_to_work_date: string;
     another_person_date: string;
+    fname: string;
+    lname: string;
+    dept: string;
     times: object[] = [
 	{"ts":"06:00","time":"6:00 AM"},
 	{"ts":"06:15","time":"6:15 AM"},
@@ -118,11 +122,26 @@ export class BaseReportComponent implements OnInit {
 	{"ts":"05:45","time":"5:45 AM"}
     ];
 
-    constructor(public alertsService: AlertsService) {
+    constructor(public alertsService: AlertsService, private router: Router, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-	this.email="engage@cumc.columbia.edu";
+	switch (this.route.snapshot.params.msg) {
+	    case "1":
+		this.fname='Nick';
+		this.lname='Taylor';
+		this.email='ntaylor@cumc.columbia.edu';
+	    	this.dept='Facilties';
+	    	break;
+	    case "2":
+		this.fname='Alejandro';
+		this.lname='Ruiz';
+		this.email='aruiz@cumc.columbia.edu';
+		this.dept='Health and Safety';
+		break;
+	    default:
+		break;
+	}
     }
 
     onSubmit(form: NgForm) {
